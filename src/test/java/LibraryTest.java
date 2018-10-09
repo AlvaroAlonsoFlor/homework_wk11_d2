@@ -7,10 +7,10 @@ import static junit.framework.TestCase.assertEquals;
 
 public class LibraryTest {
 
-    Book book1;
-    Book book2;
-    ArrayList<Book> books;
-    Library library;
+    private Book book1;
+    private Book book2;
+    private ArrayList<Book> books;
+    private Library library;
 
     @Before
     public void before() {

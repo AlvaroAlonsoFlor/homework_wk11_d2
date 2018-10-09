@@ -6,20 +6,22 @@ import java.util.ArrayList;
 import static junit.framework.TestCase.assertEquals;
 
 public class BorrowerTest {
-    Library library;
-    Borrower borrower;
+    private Library library;
+    private Borrower borrower;
+    private Book book1;
 
     @Before
     public void before() {
-        Book book1 = new Book("Foundation", "Isaac Asimov", "sci-fi");
+        book1 = new Book("Foundation", "Isaac Asimov", "sci-fi");
         library = new Library(new ArrayList<>(), 3);
         library.addBook(book1);
+        borrower = new Borrower();
     }
 
     @Test
     public void takeBook() {
-        //take 1 book from library
-        //add the book to borrower
-        assertEquals();
+        borrower.takeBook(book1);
+        assertEquals(0, library.countBooks());
+        assertEquals(1, borrower.countBooks());
     }
 }

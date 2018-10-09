@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 public class Library {
-    ArrayList<Book> books;
-    int capacity;
+    private ArrayList<Book> books;
+    private int capacity;
 
     Library(ArrayList<Book> books, int capacity) {
         this.books = books;

@@ -32,4 +32,11 @@ public class LibraryTest {
         library.addBook(book1);
         assertEquals(3, library.countBooks());
     }
+
+    @Test
+    public void addBookNoSpace() {
+        library.addBook(book1);
+        library.addBook(book2);
+        assertEquals(3, library.countBooks());
+    }
 }

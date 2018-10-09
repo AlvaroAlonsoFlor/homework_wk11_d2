@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Library {
     private ArrayList<Book> books;
@@ -32,5 +34,25 @@ public class Library {
         }
 
         return null;
+    }
+
+    public HashMap<String, Integer> getBooksByGenre() {
+        Integer counter = 1;
+        HashMap<String, Integer> result = new HashMap<>();
+
+        for (Book book: books)
+            if (result.containsKey(book.getGenre())) {
+                counter++;
+                result.put(book.getGenre(), counter);
+            } else {
+                result.put(book.getGenre(), 1);
+                counter = 1;
+            }
+
+        return result;
+    }
+
+    public int numberOfBooksByGenre(String genre) {
+        return getBooksByGenre().get(genre);
     }
 }

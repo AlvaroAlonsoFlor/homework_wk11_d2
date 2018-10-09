@@ -1,7 +1,9 @@
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -47,6 +49,13 @@ public class LibraryTest {
         library.lendBook(book1, borrower);
         assertEquals(1, library.countBooks());
         assertEquals(1, borrower.countBooks());
+    }
+
+    @Test
+    public void getBooksByGenre() {
+        library.addBook(book1);
+        System.out.println(library.numberOfBooksByGenre("sci-fi"));
+        assertEquals(2, library.numberOfBooksByGenre("sci-fi") );
     }
 
 }

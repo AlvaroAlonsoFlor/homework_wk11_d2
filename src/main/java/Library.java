@@ -13,10 +13,24 @@ public class Library {
         return this.books.size();
     }
 
-    public void addBook(Book book) {
+    public Book addBook(Book book) {
         if (countBooks() < capacity) {
             this.books.add(book);
+            return book;
         }
 
+        return null;
+
+    }
+
+
+    public Book lendBook(Book book, Borrower borrower) {
+        if (this.books.contains(book)) {
+            borrower.takeBook(book);
+            this.books.remove(book);
+            return book;
+        }
+
+        return null;
     }
 }

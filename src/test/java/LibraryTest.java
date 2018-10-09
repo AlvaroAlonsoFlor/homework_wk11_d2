@@ -11,6 +11,7 @@ public class LibraryTest {
     private Book book2;
     private ArrayList<Book> books;
     private Library library;
+    private Borrower borrower;
 
     @Before
     public void before() {
@@ -20,6 +21,7 @@ public class LibraryTest {
         books.add(book1);
         books.add(book2);
         library = new Library(books, 3);
+        borrower = new Borrower();
     }
 
     @Test
@@ -39,4 +41,12 @@ public class LibraryTest {
         library.addBook(book2);
         assertEquals(3, library.countBooks());
     }
+
+    @Test
+    public void lendBook() {
+        library.lendBook(book1, borrower);
+        assertEquals(1, library.countBooks());
+        assertEquals(1, borrower.countBooks());
+    }
+
 }
